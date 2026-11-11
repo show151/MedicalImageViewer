@@ -53,7 +53,7 @@ class MedicalImageViewer(QMainWindow):
 
         # 3Dタブ
         self.tab_3d = QWidget()
-        self.tabs.addTab(self.tab_3d, "3D Lung")
+        self.tabs.addTab(self.tab_3d, "3D Viewer")
 
         # 2D側は3方向を横並び
         layout = QHBoxLayout(self.tab_2d)
@@ -579,7 +579,7 @@ class MedicalImageViewer(QMainWindow):
 
         try:
             self.statusBar().showMessage(
-                "Loading 3D lung volume..."
+                "Loading 3D Viewer volume..."
             )
 
             volume = np.load(
@@ -655,17 +655,17 @@ class MedicalImageViewer(QMainWindow):
             self.plotter.render()
 
             self.statusBar().showMessage(
-                f"3D Lung Loaded: {volume.shape}"
+                f"3D Viewer Loaded: {volume.shape}"
             )
 
         except Exception as error:
             self.statusBar().showMessage(
-                "3D lung loading failed"
+                "3D Viewer loading failed"
             )
 
             QMessageBox.critical(
                 self,
-                "3D Lung Error",
+                "3D Viewer Error",
                 str(error),
             )
 
@@ -691,7 +691,7 @@ class MedicalImageViewer(QMainWindow):
         lung_layout.setSpacing(10)
 
         # タイトル
-        lung_title = QLabel("3D Lung Volume")
+        lung_title = QLabel("3D Viewer Volume")
         lung_title.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # 3D表示領域
@@ -707,7 +707,7 @@ class MedicalImageViewer(QMainWindow):
 
         # 読み込みボタン
         self.load_lung_button = QPushButton(
-            "Open 3D Lung Volume..."
+            "Open 3D Viewer Volume..."
         )
 
         self.load_lung_button.clicked.connect(

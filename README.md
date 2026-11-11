@@ -10,7 +10,7 @@ PySide6を使用したGUI上で、CT画像をAxial・Coronal・Sagittalの3方�
 
 また、画像処理によって抽出した肺領域をPyVistaでボリュームレンダリングし、3次元形状を観察できます。
 
-アプリケーションは「2D Viewer」と「3D Lung」の2つのタブで構成されています。
+アプリケーションは「2D Viewer」と「3D Viewer」の2つのタブで構成されています。
 
 ### 1.1 主な機能
 
@@ -26,7 +26,7 @@ PySide6を使用したGUI上で、CT画像をAxial・Coronal・Sagittalの3方�
 - 他の2方向のスライス位置を示す交差線
 - スライダー操作と交差線の連動
 
-**3D Lung**
+**3D Viewer**
 
 - 肺領域を抽出したTIFF画像系列の3次元データ化
 - モルフォロジー処理による不要領域の除去
@@ -98,7 +98,7 @@ MedicalImageViewer/
 
 TIFF画像133枚をNumPyの3次元配列として保存したファイルです。
 
-3D Lungタブで読み込むデータであり、`lung_volume_loader.py` によって生成できます。
+3D Viewerタブで読み込むデータであり、`lung_volume_loader.py` によって生成できます。
 
 ## 4. インストール方法
 
@@ -182,7 +182,7 @@ python main.py
 画面上部に以下の2つのタブが表示されます。
 
 - 2D Viewer
-- 3D Lung
+- 3D Viewer
 
 ## 6. 2D Viewerの使用方法
 
@@ -239,11 +239,11 @@ WLとWWは3方向それぞれ独立して変更できます。
 
 スライス位置スライダーを変更すると、他の画像上の交差線も連動して更新されます。
 
-## 7. 3D Lungの使用方法
+## 7. 3D Viewerの使用方法
 
 ### 7.1 3D表示用データの生成
 
-3D Lungでは `lung_volume.npy` を使用します。
+3D Viewerでは `lung_volume.npy` を使用します。
 
 このファイルはGitHubに含まれていないため、初回利用時に以下のコマンドを実行してください。
 
@@ -273,8 +273,8 @@ python main.py
 
 次の手順で操作してください。
 
-1. 「3D Lung」タブを選択します。
-2. 「Open 3D Lung Volume...」をクリックします。
+1. 「3D Viewer」タブを選択します。
+2. 「Open 3D Viewer Volume...」をクリックします。
 3. `data/lung_volume.npy` を選択します。
 4. 肺領域の3Dモデルが表示されます。
 
@@ -407,6 +407,6 @@ python main.py
 
 起動後、2D Viewerでは `data/LIDC-IDRI-0265_CT` を選択してください。
 
-3D Lungでは、生成された `data/lung_volume.npy` を選択してください。
+3D Viewerでは、生成された `data/lung_volume.npy` を選択してください。
 
 以上の操作により、2D断面表示と3D肺領域表示の両方を確認できます。

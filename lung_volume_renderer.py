@@ -117,7 +117,7 @@ def main():
     plotter.add_axes()
 
     plotter.add_text(
-        "3D Lung Volume",
+        "3D Viewer Volume",
         position="upper_left",
         font_size=12,
         color="white",
