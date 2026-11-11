@@ -1,0 +1,14 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Backups
+backups/
+
+# Data
+data/*
+
+# Include original and processed images
+!data/LIDC-IDRI-0265_CT/
+!data/LIDC-IDRI-0265_CT2/
